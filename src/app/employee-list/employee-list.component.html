@@ -1,0 +1,33 @@
+<div class="container">
+
+
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand mybrand" routerLink='/employee-list'> <i class="fa fa-group"></i></a>
+      <h1 class="navbar-brand align-middle">Employee Register Book</h1>
+      <a class="btn btn-success btn-sm" routerLink='/employee-create'> <i class="fa fa-plus"></i> Add New Employee</a>
+  </nav>
+
+
+
+
+<div class="row pt-5">
+  <ul *ngFor="let emp of emps">
+
+   <div class="card" style="width: 550px;">
+     <div class="card col-sm">
+      <div class="card-body">
+        <h4 class="card-title"> <strong>Name:</strong>{{emp.firstName}} {{emp.lastName}}</h4>
+        <h4 class="card-title"> <strong> Number Known: </strong>{{emp.number}}
+        </h4>
+        <a [routerLink]="['/employee-edit', emp.id]" class="btn btn-primary">Edit</a>
+        <button (click)="deleteEmployee(emp.id)" class="btn btn-danger">Delete</button>
+      </div>
+     </div>
+     </div>
+
+
+
+
+
+  </ul>
+</div>
